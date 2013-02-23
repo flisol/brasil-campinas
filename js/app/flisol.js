@@ -11,16 +11,16 @@ angular.module('FlisolAPP', [], function($routeProvider, $locationProvider) {
   });
 
   $routeProvider.when('/sobre/', {
-    templateUrl: 'partials/users.html',
-    controller: AboutCrtl
+    templateUrl: 'partials/aboutFlisol.html',
+    controller: AboutFlisolCrtl
   });
 
   $routeProvider.when('/sobre/FLISOL', {
-    templateUrl: 'partials/users.html',
-    controller: AboutCrtl
+    templateUrl: 'partials/aboutFlisol.html',
+    controller: AboutFlisolCrtl
   });
 
-  $routeProvider.when('/sobre/FLISOLCAMPINAS', {
+  $routeProvider.when('/sobre/campinas', {
     templateUrl: 'partials/where.html',
     controller: WhereCrtl
   });
@@ -85,5 +85,12 @@ function WhereCrtl($scope, $routeParams, $rootScope) {
   $scope.areaTitle = "Flisol Campinas 2013";
   $scope.breadCrumb = ["Sobre o Flisol", "Campinas 2013"];
   $rootScope.pageTitle = "Onde e Como?";
+
+}
+
+function AboutFlisolCrtl($scope, $routeParams, $rootScope) {
+  $scope.areaTitle = "Flisol 2013";
+  $scope.breadCrumb = ["Sobre o Flisol", "Na América Latina"];
+  $rootScope.pageTitle = "LATAM";
 
 }
