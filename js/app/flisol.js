@@ -61,6 +61,8 @@ function main($scope, $route, $routeParams, $location, $rootScope) {
   $scope.$location = $location;
   $scope.$routeParams = $routeParams;
   $rootScope.pageTitle = "Home";
+
+  jQuery('#slider').flexslider();
 }
 
 function AboutCrtl($scope, $routeParams, $rootScope) {
