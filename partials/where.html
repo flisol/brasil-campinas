@@ -8,90 +8,27 @@
 <div id="wrapper">
 
   <!-- Start of left content wrapper -->
-    <div class="left_content_wrapper">
-    
+  <div class="left_content_wrapper">
+
       <!-- Start of post -->
-        <div class="post">
+      <div class="post">
+
+        <h4>O EVENTO</h4>
         
-        <h4>Support</h4>
+        <p>Acontecerá dia 27/04/2013 na POLICAMP ( ver mais info abaixo ) e conta com entrada totalmente gratuíta.</p>
+
+        <h3>Rua Luiz Otávio, 1281 | Pq. Sta. Cândida - Campinas, SP</h3>
         
-        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-        
-        <p>For all support related questions use <a href="mailto:support@respond.com">support@respond.com</a></p>
-        
-            <form action="mailer.php" id="contact_form" method="post">
-               
-                <ul class="form">       
-                
-                    <li class="short">
-                        <label>Name<span class="required"></span></label>
-                        <input type="text" name="name" id="name" value="Name" class="requiredField" onblur="if(this.value == '') { this.value = 'Name'; }" onfocus="if(this.value == 'Name') { this.value = ''; }" />
-                    </li>
-                                                                                    
-                    <li class="long">
-                        <label>Email Address<span class="required"></span></label>          
-                        <input type="text" name="email" id="email" value="Email Address" class="requiredField email" onblur="if(this.value == '') { this.value = 'Email Address'; }" onfocus="if(this.value == 'Email Address') { this.value = ''; }" />                        </li>
-                    
-                    <li class="short">
-                        <label>Website</label>
-                        <input type="text" name="site" id="site" value="Website" class="requiredField" onblur="if(this.value == '') { this.value = 'Website'; }" onfocus="if(this.value == 'Website') { this.value = ''; }" />
-                    </li>
-                                    
-                    <li class="textarea">
-                        <label>Message<span class="required"></span></label>
-                        <textarea name="message" id="message" rows="20" cols="30"></textarea>
-                    </li>
-                                            
-                    <li class="button"><input name="submitted" id="submitted" value="Submit" class="submit" type="submit" />
-                    </li>
-                
-                </ul>
-                    
-                </form>       
+        <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=-22.85170,-47.04363&amp;output=embed"></iframe><br />   
 
         </div><!-- End of post -->
-   
+
     </div><!-- End of left content wrapper -->
     
     <!-- Start of right content wrapper -->
-    <div class="right_content_wrapper">
-    
-      <!-- Start of text widget -->
-        <div class="text_widget">
-        
-        <h2>More Info</h2>
-        
-        <ul class="contact">
-          <li><span class="contact_title">Phone</span></li>
-            <li>Toll Free: 1-800-987-6543</li>
-            <li>Fax: 1-800-987-6542</li>
-        </ul>
-        
-        <ul class="contact">
-          <li><span class="contact_title">Hours</span></li>
-            <li>Monday - Friday</li>
-            <li>(Except all legal holidays)</li>
-            <li>9am - 5pm</li>
-        </ul>        
+    <div ng-include src="'/partials/rightSideInclude.html'" class="right_content_wrapper">
 
-        <ul class="contact">
-          <li><span class="contact_title">Location</span></li>
-            <li>Suite 500</li>
-            <li>1234 Paddington St</li>
-            <li>London, UK 333333</li>
-        </ul>    
 
-        </div><!-- End of text widget -->  
-        
-        <!-- Start of text widget -->
-        <div class="text_widget">
-        
-        <h2>map</h2>
-        
-        <iframe width="auto" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1234+Paddington+Street,+United+Kingdom&amp;aq=0&amp;oq=1234+Paddington+St&amp;sll=37.0625,-95.677068&amp;sspn=76.725149,99.755859&amp;ie=UTF8&amp;hq=1234+Paddington+Street,+United+Kingdom&amp;hnear=&amp;radius=15000&amp;t=m&amp;ll=51.517124,-0.174187&amp;spn=0.071946,0.071946&amp;output=embed"></iframe><br />
-        
-        </div><!-- End of text widget -->              
-    
     </div><!-- End of right content wrapper -->
 
 </div><!-- End of wrapper -->
