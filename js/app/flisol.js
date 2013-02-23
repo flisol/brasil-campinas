@@ -21,8 +21,8 @@ angular.module('FlisolAPP', [], function($routeProvider, $locationProvider) {
   });
 
   $routeProvider.when('/sobre/FLISOLCAMPINAS', {
-    templateUrl: 'partials/home.html',
-    controller: AboutCrtl
+    templateUrl: 'partials/where.html',
+    controller: WhereCrtl
   });
 
   $routeProvider.when('/inscreva-se/', {
@@ -76,4 +76,9 @@ function PresentationsCrtl($scope, $routeParams) {
 
 function SpeechersCrtl($scope, $routeParams) {
 
+}
+
+function WhereCrtl($scope, $routeParams) {
+  $scope.areaTitle = "Flisol Campinas 2013";
+  $scope.breadCrumb = ["Sobre o Flisol", "Campinas 2013"]
 }
