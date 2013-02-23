@@ -2967,6 +2967,8 @@ ul.sf-menu li ul li a {
 
 #slider {
 	width:960px;
+	height:300px;
+	overflow: hidden;
 	margin:0 auto;
 	clear:both;
 	background:url(../img/loading.gif) no-repeat 50% 50%;
