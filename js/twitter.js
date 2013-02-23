@@ -8,7 +8,7 @@
  
   $.fn.tweet = function(o){
     var s = {
-      username: ["seaofclouds"],              // [string]   required, unless you want to display our tweets. :) it can be an array, just do ["username1","username2","etc"]
+      username: ["klederson"],              // [string]   required, unless you want to display our tweets. :) it can be an array, just do ["username1","username2","etc"]
       list: null,                              //[string]   optional name of list belonging to username
       avatar_size: null,                      // [integer]  height and width of avatar if displayed (48px max)
       count: 3,                               // [integer]  how many tweets to display?
