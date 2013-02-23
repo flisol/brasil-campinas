@@ -56,29 +56,32 @@ angular.module('FlisolAPP', [], function($routeProvider, $locationProvider) {
 
 // Controllers
 
-function main($scope, $route, $routeParams, $location) {
+function main($scope, $route, $routeParams, $location, $rootScope) {
   $scope.$route = $route;
   $scope.$location = $location;
   $scope.$routeParams = $routeParams;
+  $rootScope.pageTitle = "Home";
 }
 
-function AboutCrtl($scope, $routeParams) {
-
-}
-
-function ContactCrtl($scope, $routeParams) {
+function AboutCrtl($scope, $routeParams, $rootScope) {
 
 }
 
-function PresentationsCrtl($scope, $routeParams) {
+function ContactCrtl($scope, $routeParams, $rootScope) {
 
 }
 
-function SpeechersCrtl($scope, $routeParams) {
+function PresentationsCrtl($scope, $routeParams, $rootScope) {
 
 }
 
-function WhereCrtl($scope, $routeParams) {
+function SpeechersCrtl($scope, $routeParams, $rootScope) {
+
+}
+
+function WhereCrtl($scope, $routeParams, $rootScope) {
   $scope.areaTitle = "Flisol Campinas 2013";
-  $scope.breadCrumb = ["Sobre o Flisol", "Campinas 2013"]
+  $scope.breadCrumb = ["Sobre o Flisol", "Campinas 2013"];
+  $rootScope.pageTitle = "Onde e Como?";
+
 }
