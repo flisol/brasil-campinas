@@ -13,11 +13,6 @@ class MongoModel {
   private static $_connections = [];
   private static $_databases = [];
 
-  public function __construct(PhpBURN_Core &$model) {
-    $this->_model = &$model;
-    $this->_settings = PhpBURN_Configuration::getConfig($this->_model->_package);
-  }
-
   private function getModel() {
     return $this->_model;
   }
