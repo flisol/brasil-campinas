@@ -2,16 +2,19 @@
 
 class MongoModel {
 
-  private static $server = "localhost";
+  private static $server = NULL;
 
   //from original model
   private $_settings = NULL;
-
   //model itself original from MySQL/MSSQL/etc...
   private $_model = NULL;
-  
   private static $_connections = [];
   private static $_databases = [];
+
+  public function __construct(PhpBURN_Core &$model) {
+    $this->_model = &$model;
+    $this->_settings = PhpBURN_Configuration::getConfig($this->_model->_package);
+  }
 
   private function getModel() {
     return $this->_model;
@@ -23,6 +26,7 @@ class MongoModel {
 
   private function conn() {
     if (empty(self::$_connections[$this->getSettings()->package])) {
+      self::$server = $this->getModel()->getConnection()->getHost();
       $connString = sprintf("mongodb://%s:%s@%s", $this->getSettings()->user, $this->getSettings()->password, self::$server);
       self::$_connections[$this->getSettings()->package] = new MongoClient($connString);
     }
@@ -51,6 +55,10 @@ class MongoModel {
       $data['_id'] = $this->getModel()->$pkField['field']['alias'];
 
     $this->collection()->save($data);
+  }
+
+  public function find() {
+    
   }
 
 }
