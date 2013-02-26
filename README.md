@@ -88,7 +88,7 @@ Feito isso reinicie o Apache e o PHPBURN estará pronto para uso.
 | ------------- |:-------------|:------------:|
 | URL | http://localhost/users/get/{{UUID}} | sim        |
 | Content-Type | application/json | sim        |
-| Method | POST | sim        |
+| Method | GET | sim        |
 
 **Data**
 > Não existe um body para esta requisição
@@ -106,7 +106,7 @@ Feito isso reinicie o Apache e o PHPBURN estará pronto para uso.
 | ------------- |:-------------|:------------:|
 | URL | http://localhost/inscricoes/find/ | sim        |
 | Content-Type | application/json | sim        |
-| Method | POST | sim        |
+| Method | GET | sim        |
 
 **Data**
 > Não existe um body para esta requisição
