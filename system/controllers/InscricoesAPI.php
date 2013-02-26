@@ -122,7 +122,7 @@ class InscricoesAPI extends BaseAPI {
       //definir dentro dos campos "buscáveis" um like pro filtro
       foreach($serchFields as $field) {
         $search ="%$filter%";
-        $users->like($field,$search); //adiciona o like pro campo $field
+        $users->like($field,$search,'OR'); //adiciona o like pro campo $field
       }
     }
 
