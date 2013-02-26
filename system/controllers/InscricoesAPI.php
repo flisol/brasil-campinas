@@ -130,7 +130,7 @@ class InscricoesAPI extends BaseAPI {
     if( $users->limit($page*$amount,$amount)->find() > 0 ) {
       $httpStatus = 200;
       $response['status'] = self::OK;
-      $message = sprintf("(%) usuário(s) encontrado(s)",$user->getAmount());
+      $message = sprintf("(%) usuário(s) encontrado(s)",$users->getAmount());
       $response['messages']['success'] = PhpBURN_Views::lazyTranslate($message);
 
       //parsear item a item pra poder remover o RG
