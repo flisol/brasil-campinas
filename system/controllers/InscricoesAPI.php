@@ -112,7 +112,7 @@ class InscricoesAPI extends BaseAPI {
     if ($this->getMethod() != 'get')
       $this->sendResponse(405);
 
-    $page = $page <= 0 ? 1 : $page -1;
+    $page = $page <= 1 ? 0 : $page - 1;
 
     $users = new Inscricoes;
 
