@@ -14,7 +14,7 @@ $thisConfig = array(
 		'user' => 'flisol',
 		'password' => 'flisol',
 		'port' => '3306',
-		'host' => 'localhost',
+		'host' => 'database.in.ifind.com.br',
 
 		/**
 		 * Structure configuration

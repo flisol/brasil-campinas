@@ -27,7 +27,7 @@ class MongoModel {
   private function conn() {
     if (empty(self::$_connections[$this->getSettings()->package])) {
       self::$server = $this->getModel()->getConnection()->getHost();
-      $connString = sprintf("mongodb://%s:%s@%s", $this->getSettings()->user, $this->getSettings()->password, self::$server);
+      $connString = sprintf("mongodb://%s:%s@%s/%s", $this->getSettings()->user, $this->getSettings()->password, self::$server,$this->getSettings()->database);
       self::$_connections[$this->getSettings()->package] = new MongoClient($connString);
     }
 
