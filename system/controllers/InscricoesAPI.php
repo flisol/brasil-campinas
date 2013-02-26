@@ -43,7 +43,7 @@ class InscricoesAPI extends BaseAPI {
     $user->rg = $data->rg;
     $user->uuid = uniqid();
     $user->email = $data->email;
-    $user->website = $data->site;
+    $user->website = $data->website;
     $user->cidade = $data->cidade;
     $user->estado = $data->estado;
     
@@ -51,8 +51,8 @@ class InscricoesAPI extends BaseAPI {
       //Este é um HOOK para salvar também no mongo ( Ele mantem o id caso seja um update ou insere um novo dado na tabela )
       //Vale lembrar que por hora apenas iremos armazenar os dados no mongo como redundância e para uso futuro
       //Este é um bom exemplo da flexibilidade da API
-      //$mongoVersion = new MongoModel($user);
-      //$mongoVersion->save();
+      $mongoVersion = new MongoModel($user);
+      $mongoVersion->save();
 
       $httpStatus = 200;
       $response['content'] = $user->toArray();
