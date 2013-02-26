@@ -12,6 +12,10 @@ require_once('RestServer.php');
  */
 abstract class BaseAPI extends RestServer {
 
+  const OK = "OK";
+  const ERROR = "ERROR";
+  const AUTH_FAIL = "AUTH FAIL";
+
   protected $allowedContentTypes = array(
       'application/json' => 'json'
   );

@@ -10,11 +10,11 @@ $thisConfig = array(
 		 * package configs are not setted up
 		 */
 		'dialect' => 'MySQL',
-		'database' => '[#setup:database#]',
-		'user' => '[#setup:username#]',
-		'password' => '[#setup:password#]',
+		'database' => 'Flisol',
+		'user' => 'flisol',
+		'password' => 'flisol',
 		'port' => '3306',
-		'host' => '[#setup:host#]',
+		'host' => 'database.in.ifind.com.br',
 
 		/**
 		 * Structure configuration
@@ -39,7 +39,8 @@ $thisConfig = array(
 		'options' => array(),
 			
 			'packages' => array(
-				'phpburn'
+				'Flisol', 
+				'Utils'
 			)
 );
 

@@ -29,7 +29,7 @@ session_start();
 error_reporting(E_ALL & ~E_NOTICE);
 
 //Turn the Messages and Logs and Erros ON
-PhpBURN_Message::setMode(PhpBURN_Message::NONE); //You can Choose FIREPHP, BROWSER OR FILE for now than more can came latter
+PhpBURN_Message::setMode(PhpBURN_Message::FILE); //You can Choose FIREPHP, BROWSER OR FILE for now than more can came latter
 
 
 ################################
@@ -51,7 +51,7 @@ PhpBURN::loadModule('View');
 PhpBURN::loadModule('Controller');
 
 # To load the module just remove the # comment from the line
-#PhpBURN::loadModule('Model');
+PhpBURN::loadModule('Model');
 
 # Spices
 PhpBURN::loadModule('Spices');
