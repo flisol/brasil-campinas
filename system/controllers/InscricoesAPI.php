@@ -108,7 +108,7 @@ class InscricoesAPI extends BaseAPI {
    * 
    * @return JSON
    */ 
-  public function find($page = 1, $filter = NULL, $amount = 999) {
+  public function find($page = 1, $amount = 999, $filter = NULL) {
     if ($this->getMethod() != 'get')
       $this->sendResponse(405);
 

@@ -114,12 +114,12 @@ Feito isso reinicie o Apache e o PHPBURN estará pronto para uso.
 | Parametros    | Tipo          | Obrigatório  | Descrição |
 | --------------|:-------------:|:------------:|:----------|
 | page | Integer | não  | Define a partir de qual página os registros serão trazidos |
-| filter | String | não  | Este filtro adiciona uma espécie de busca assim restringindo melhor os resultados |
 | amount | Integer | não  | Define a quantidade máxima de itens a serem retornados |
+| filter | String | não  | Este filtro adiciona uma espécie de busca assim restringindo melhor os resultados |
 
 Exemplo
 
-    http://localhost/users/find/1/klederson/100
+    http://localhost/users/find/1/100/klederson
 
 > O exemplo acima trará no máximo 100 usuários a partir da página 1 onde algum termo de match com klederson
 
