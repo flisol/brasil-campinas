@@ -67,6 +67,43 @@ function main($scope, $route, $routeParams, $location, $rootScope) {
 
 function AboutCrtl($scope, $routeParams, $rootScope) {
 
+  $rootScope.pageTitle = "Inscreva-se";
+
+  $scope.user = {};
+  $scope.user.name = "Nome";
+  $scope.user.lastname = "Sobrenome";
+  $scope.user.rg = "RG";
+  $scope.user.email = "E-mail";
+  $scope.user.site = "Website";
+  $scope.user.city = "Cidade";
+  $scope.user.state = "Estado";
+}
+
+function SingUpCtrl($scope,$http){
+  $scope.sendData = function(){
+
+    var user = $scope.user;
+    var user_data = {
+      "nome":user.name,
+      "sobrenome":user.lastname,
+      "rg":user.rg,
+      "email":user.email,
+      "website":user.site == 'Website' ? '' : user.site,
+      "cidade":user.city,
+      "estado":user.state
+    }
+    $http.defaults.headers.post = 'application/json';
+    $http.post('http://api.flisolcampinas.net/users/add',user_data).success(function(data,status,headers,config){console.log(status)})
+    .error(function(data,status,headers,config){console.log("error" + data)});
+    $('#contact_form').css('display','none');
+    $('.post > h4').html('Inscrição realizada com sucesso.');
+    window.scrollTo(0,0);
+    $http.get('http://api.flisolcampinas.net/users/get/0')
+    
+
+    return false;
+    //$http.post('teste',user)
+   }
 }
 
 function ContactCrtl($scope, $routeParams, $rootScope) {
