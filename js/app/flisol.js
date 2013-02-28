@@ -73,7 +73,7 @@ function AboutCrtl($scope, $routeParams, $rootScope) {
   $scope.user.name = "Nome";
   $scope.user.lastname = "Sobrenome";
   $scope.user.rg = "RG";
-  $scope.user.email = "E-mail";
+  $scope.user.email = "Email";
   $scope.user.site = "Website";
   $scope.user.city = "Cidade";
   $scope.user.state = "Estado";
@@ -89,26 +89,18 @@ function SingUpCtrl($scope,$http){
       "rg":user.rg,
       "email":user.email,
       "website":user.site == 'Website' ? '' : user.site,
-      "inscricoescdade":user.city,
+      "cidade":user.city,
       "estado":user.state
     }
-   /* $http.defaults.headers.post['content-type'] = 'application/json';
-    $http({
-            url: "http://api.flisolcampinas.net/users/add",
-            dataType: "jsonp",
-            method: "POST",
-            data: JSON.stringify(user_data),
-            headers: {
-                "Content-Type": "application/json; charset=utf-8"
-            }
-    });*/
 
     $.ajax({
-          url: 'http://api.flisolcampinas.net/users/add',
-          type: 'POST',
+          url: 'http://www.campinasrock.com/flisol/users',
+          type: 'GET',
           data : user_data,
           dataType: 'jsonp',
-          contentType : 'application/json; charset=utf-8',
+          jsonp:false,
+          callback: '',
+          //contentType : 'application/json; charset=utf-8',
           success:function(){
             $('#contact_form').css('display','none');
             $('.post > h4').html('Inscrição realizada com sucesso.');
@@ -116,9 +108,14 @@ function SingUpCtrl($scope,$http){
 
           },
           error: function(xhr, textStatus, errorThrown) {
-            $('.post > h4').html('Ocorreu um erro, por favor tente mais tarde.');
-            window.scrollTo(0,0);
-
+            if(xhr.status){
+                $('#contact_form').css('display','none');
+                $('.post > h4').html('Inscrição realizada com sucesso.');
+                window.scrollTo(0,0);              
+            }else{
+                $('.post > h4').html('Ocorreu um erro, por favor tente mais tarde.');
+                window.scrollTo(0,0);
+            }
           }
       });
 
