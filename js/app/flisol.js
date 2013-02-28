@@ -92,23 +92,35 @@ function SingUpCtrl($scope,$http){
       "inscricoescdade":user.city,
       "estado":user.state
     }
-    $http.defaults.headers.post['content-type'] = 'application/json';
+   /* $http.defaults.headers.post['content-type'] = 'application/json';
     $http({
             url: "http://api.flisolcampinas.net/users/add",
-            dataType: "json",
+            dataType: "jsonp",
             method: "POST",
             data: JSON.stringify(user_data),
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
             }
-    });
+    });*/
 
+    $.ajax({
+          url: 'http://api.flisolcampinas.net/users/add',
+          type: 'POST',
+          data : user_data,
+          dataType: 'jsonp',
+          contentType : 'application/json; charset=utf-8',
+          success:function(){
+            $('#contact_form').css('display','none');
+            $('.post > h4').html('Inscrição realizada com sucesso.');
+            window.scrollTo(0,0);
 
+          },
+          error: function(xhr, textStatus, errorThrown) {
+            $('.post > h4').html('Ocorreu um erro, por favor tente mais tarde.');
+            window.scrollTo(0,0);
 
-      //.post('http://api.flisolcampinas.net/users/add',JSON.stringify(user_data));
-    $('#contact_form').css('display','none');
-    $('.post > h4').html('Inscrição realizada com sucesso.');
-    window.scrollTo(0,0);
+          }
+      });
 
    
     return false;
