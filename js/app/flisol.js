@@ -108,7 +108,7 @@ function SingUpCtrl($scope,$http){
 
           },
           error: function(xhr, textStatus, errorThrown) {
-            if(xhr.status){
+            if(xhr.status==200){
                 $('#contact_form').css('display','none');
                 $('.post > h4').html('Inscrição realizada com sucesso.');
                 window.scrollTo(0,0);              
