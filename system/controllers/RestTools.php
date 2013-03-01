@@ -59,6 +59,7 @@ class RestTools {
     $statusHeader = 'HTTP/1.1 ' . $status . ' ' . self::getStatusCodeMessage($status);
     header($statusHeader, true, $status);
     header('Content-type: ' . $content_type);
+    header('Access-Control-Allow-Origin:*');
     
     if(count($header) > 0) {
       foreach($header as $name => $value) {
