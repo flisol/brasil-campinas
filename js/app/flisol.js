@@ -94,13 +94,11 @@ function SingUpCtrl($scope,$http){
     }
 
     $.ajax({
-          url: 'http://www.campinasrock.com/flisol/users',
-          type: 'GET',
+          url: 'http://api.flisolcampinas.net/inscricoes/add/',
+          type: 'POST',
           data : user_data,
-          dataType: 'jsonp',
-          jsonp:false,
+          dataType: 'jsonn',
           callback: '',
-          //contentType : 'application/json; charset=utf-8',
           success:function(){
             $('#contact_form').css('display','none');
             $('.post > h4').html('Inscrição realizada com sucesso.');
