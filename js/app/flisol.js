@@ -97,7 +97,8 @@ function SingUpCtrl($scope,$http){
           url: 'http://api.flisolcampinas.net/inscricoes/add/',
           type: 'POST',
           data : user_data,
-          dataType: 'jsonn',
+          dataType: 'json',
+          contentType : "text/plain",
           callback: '',
           success:function(){
             $('#contact_form').css('display','none');
