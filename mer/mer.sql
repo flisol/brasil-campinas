@@ -151,8 +151,8 @@ CREATE  TABLE IF NOT EXISTS `Flisol`.`Palestras` (
   CONSTRAINT `fk_Palestras_Inscricoes1`
     FOREIGN KEY (`idPalestrante` )
     REFERENCES `Flisol`.`Inscricoes` (`idInscricao` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -171,13 +171,13 @@ CREATE  TABLE IF NOT EXISTS `Flisol`.`Inscricoes_has_Palestras` (
   CONSTRAINT `fk_Inscricoes_has_Palestras_Inscricoes1`
     FOREIGN KEY (`idInscricao` )
     REFERENCES `Flisol`.`Inscricoes` (`idInscricao` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_Inscricoes_has_Palestras_Palestras1`
     FOREIGN KEY (`idPalestra` )
     REFERENCES `Flisol`.`Palestras` (`idPalestra` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
