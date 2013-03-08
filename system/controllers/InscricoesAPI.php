@@ -85,6 +85,7 @@ class InscricoesAPI extends BaseAPI {
     if($user->where('uuid','=',$id)->find() == 1) {
       $httpStatus = 200;
       $user->rg = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
+      $user->email = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
       $response['content'] = $user->toArray();
       $response['status'] = self::OK;
       $response['messages']['success'] = PhpBURN_Views::lazyTranslate("[!Usuário Encontrado!]");
@@ -136,6 +137,7 @@ class InscricoesAPI extends BaseAPI {
       //parsear item a item pra poder remover o RG
       while($users->fetch()) {
         $users->rg = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
+        $users->email = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
         $response['content'][] = $users->toArray();
       }
     } else {
