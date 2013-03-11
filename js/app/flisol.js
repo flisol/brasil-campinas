@@ -67,6 +67,61 @@ function main($scope, $route, $routeParams, $location, $rootScope) {
 
 function AboutCrtl($scope, $routeParams, $rootScope) {
 
+  $rootScope.pageTitle = "Inscreva-se";
+
+  $scope.user = {};
+  $scope.user.name = "Nome";
+  $scope.user.lastname = "Sobrenome";
+  $scope.user.rg = "RG";
+  $scope.user.email = "Email";
+  $scope.user.site = "Website";
+  $scope.user.city = "Cidade";
+  $scope.user.state = "Estado";
+}
+
+function SingUpCtrl($scope,$http){
+  $scope.sendData = function(){
+
+    var user = $scope.user;
+    var user_data = {
+      "nome":user.name,
+      "sobrenome":user.lastname,
+      "rg":user.rg,
+      "email":user.email,
+      "website":user.site == 'Website' ? '' : user.site,
+      "cidade":user.city,
+      "estado":user.state
+    }
+
+    $.ajax({
+          url: 'http://api.flisolcampinas.net/inscricoes/add/',
+          type: 'POST',
+          data : JSON.stringify(user_data),
+          dataType: 'json',
+          contentType : "text/plain",
+          processData : false,
+          callback: '',
+          success:function(){
+            $('#contact_form').css('display','none');
+            $('.post > h4').html('Inscrição realizada com sucesso.');
+            window.scrollTo(0,0);
+
+          },
+          error: function(xhr, textStatus, errorThrown) {
+            if(xhr.status==200){
+                $('#contact_form').css('display','none');
+                $('.post > h4').html('Inscrição realizada com sucesso.');
+                window.scrollTo(0,0);              
+            }else{
+                $('.post > h4').html('Ocorreu um erro, por favor tente mais tarde.');
+                window.scrollTo(0,0);
+            }
+          }
+      });
+
+   
+    return false;
+   }
 }
 
 function ContactCrtl($scope, $routeParams, $rootScope) {
