@@ -63,6 +63,19 @@ function main($scope, $route, $routeParams, $location, $rootScope) {
   $rootScope.pageTitle = "Home";
 
   jQuery('#slider').flexslider();
+
+  $(".tweet").tweet({
+    username: "@flisolcampinas",
+    join_text: "auto",
+    avatar_size: 47,
+    count: 2,
+    auto_join_text_default: "we said,", 
+    auto_join_text_ed: "we",
+    auto_join_text_ing: "we were",
+    auto_join_text_reply: "we replied to",
+    auto_join_text_url: "we were checking out",
+    loading_text: "loading tweets..."
+  });
 }
 
 function AboutCrtl($scope, $routeParams, $rootScope) {
@@ -94,34 +107,34 @@ function SingUpCtrl($scope,$http){
     }
 
     $.ajax({
-          url: 'http://api.flisolcampinas.net/inscricoes/add/',
-          type: 'POST',
-          data : JSON.stringify(user_data),
-          dataType: 'json',
-          contentType : "text/plain",
-          processData : false,
-          callback: '',
-          success:function(){
-            $('#contact_form').css('display','none');
-            $('.post > h4').html('Inscrição realizada com sucesso.');
-            window.scrollTo(0,0);
+      url: 'http://api.flisolcampinas.net/inscricoes/add/',
+      type: 'POST',
+      data : JSON.stringify(user_data),
+      dataType: 'json',
+      contentType : "text/plain",
+      processData : false,
+      callback: '',
+      success:function(){
+        $('#contact_form').css('display','none');
+        $('.post > h4').html('Inscrição realizada com sucesso.');
+        window.scrollTo(0,0);
 
-          },
-          error: function(xhr, textStatus, errorThrown) {
-            if(xhr.status==200){
-                $('#contact_form').css('display','none');
-                $('.post > h4').html('Inscrição realizada com sucesso.');
-                window.scrollTo(0,0);              
-            }else{
-                $('.post > h4').html('Ocorreu um erro, por favor tente mais tarde.');
-                window.scrollTo(0,0);
-            }
-          }
-      });
+      },
+      error: function(xhr, textStatus, errorThrown) {
+        if(xhr.status==200){
+          $('#contact_form').css('display','none');
+          $('.post > h4').html('Inscrição realizada com sucesso.');
+          window.scrollTo(0,0);              
+        }else{
+          $('.post > h4').html('Ocorreu um erro, por favor tente mais tarde.');
+          window.scrollTo(0,0);
+        }
+      }
+    });
 
-   
+    
     return false;
-   }
+  }
 }
 
 function ContactCrtl($scope, $routeParams, $rootScope) {
