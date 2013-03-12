@@ -1,1 +1,98 @@
-users
+<!-- Start of slider wrapper -->
+<div id="slider_wrapper">
+
+  <!-- Start of breadcrumb wrapper -->
+    <div id="breadcrumb_wrapper">
+
+        <h1>Inscrições</h1>
+        
+            <!-- Start of breadcrumb -->
+            <div id="breadcrumb">
+        
+                <!-- Start of breadcrumb ul -->
+                <ul>
+        
+                    <li><a href="index.html">Home</a></li>
+                    <li>&#8250;&nbsp; Inscreva-se</li>
+        
+                </ul><!-- End of breadcrumb ul -->
+        
+            </div><!-- End of breadcrumb -->
+            
+  </div><!-- End of breadcrumb wrapper -->
+
+</div><!-- End of slider wrapper -->
+
+<!-- Start of wrapper -->
+<div id="wrapper">
+
+  <!-- Start of left content wrapper -->
+    <div class="left_content_wrapper">
+    
+      <!-- Start of post -->
+        <div class="post">
+        
+        <h4>Inscreva-se</h4>
+        
+     <!--   <p>As inscrições são gratuitas, bastando preencher o formulário abaixo com seus dados.</p>-->
+        
+            <form name="contact_form" id="contact_form" ng-submit="sendData();" ng-controller="SingUpCtrl">
+               
+                <ul class="form">       
+                
+                    <li class="short">
+                        <label>Nome<span class="required"></span></label>
+                        <input type="text" name="nome" id="nome" value="Nome" class="requiredField" onblur="if(this.value == '') { this.value = 'Nome'; }" onfocus="if(this.value == 'Nome') { this.value = ''; }" ng-model='user.name' required>
+                    </li>
+                         
+                    <li class="short">
+                        <label>Sobrenome<span class="required"></span></label>
+                        <input type="text" name="sobrenome" id="sobrenome" value="Sobrenome" class="requiredField" onblur="if(this.value == '') { this.value = 'Sobrenome'; }" onfocus="if(this.value == 'Sobrenome') { this.value = ''; }" ng-model='user.lastname' required>
+                    </li>
+
+
+                    <li class="short">
+                        <label>RG<span class="required"></span></label>
+                        <input type="text" name="rg" id="rg" value="RG" class="requiredField" onblur="if(this.value == '') { this.value = 'RG'; }" onfocus="if(this.value == 'RG') { this.value = ''; }" ng-model='user.rg' required>
+                    </li>
+
+
+                    <li class="long">
+                        <label>Email<span class="required"></span></label>          
+                        <input type="text" name="email" id="email" value="Email" class="requiredField email" onblur="if(this.value == '') { this.value = 'Email'; }" onfocus="if(this.value == 'Email') { this.value = ''; }" ng-model='user.email' required>                    
+                    </li>
+                    
+                    <li class="short">
+                        <label>Website</label>
+                        <input type="text" name="site" id="site" value="Website" onblur="if(this.value == '') { this.value = 'Website'; }" onfocus="if(this.value == 'Website') { this.value = ''; }" ng-model='user.site'>
+                    </li>
+                                    
+                    <li class="short">
+                        <label>Cidade</label>
+                        <input type="text" name="cidade" id="cidade" value="Cidade" onblur="if(this.value == '') { this.value = 'Cidade'; }" onfocus="if(this.value == 'Cidade') { this.value = ''; }" ng-model='user.city' required>
+                    </li>
+
+
+                    <li class="short">
+                        <label>Estado</label>
+                        <input type="text" name="estado" id="estado" value="Estado" onblur="if(this.value == '') { this.value = 'Estado'; }" onfocus="if(this.value == 'Estado') { this.value = ''; }" ng-model='user.state' required>
+                    </li>
+
+
+                    <li class="button"><input name="submitted" id="submitted" value="Inscrever!" class="submit" type="submit">
+                    </li>
+                
+                </ul>
+                    
+                </form>       
+
+        </div><!-- End of post -->
+   
+    </div><!-- End of left content wrapper -->
+    
+    <!-- Start of right content wrapper -->
+    	<div ng-include src="'/partials/rightSideInclude.html'" class="right_content_wrapper">
+    </div><!-- End of right content wrapper -->
+
+</div><!-- End of wrapper -->
+</html>
