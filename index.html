@@ -35,7 +35,7 @@
 <script type="text/javascript" src="js/supersubs.js"> </script>
 <script type="text/javascript" src="js/custom.js"> </script>
 <script type="text/javascript" src="js/scrolltopcontrol.js"> </script>
-<!--<script type="text/javascript" src="js/twitter.js"> </script>-->
+<script type="text/javascript" src="js/twitter.js"> </script>
 <script type="text/javascript" src="js/jquery.flexslider-min.js"> </script>
 <script type="text/javascript" src="js/jquery.prettyPhoto.js"> </script>
 <script type="text/javascript" src="js/jquery.quicksand.js"> </script>
@@ -202,9 +202,11 @@ $(document).ready(function(){
         <!-- Start of footer widget -->
         <div id="footer_widget">
 
-            <a href="#"><img src="img/footer_logo.png" height="34" width="209" alt="bottom logo" /></a>
+            <a href="#"><img src="img/footer_logo.png" alt="bottom logo" /></a>
 
             <p>FLISOL Campinas 2013.</p>
+
+            <div class="fb-like" data-href="http://www.facebook.com/flisolcampinas/" data-send="true" data-width="100" data-show-faces="true" data-colorscheme="dark"></div>
 
         </div><!-- End of footer widget -->
 
@@ -226,21 +228,26 @@ $(document).ready(function(){
        <!-- Start of footer right -->
        <div class="footer_right">
 
-        <h5>Site Map</h5>
 
-        <ul>
-           <li><a href="#">Aenean lacinia bibendum</a></li>
-           <li>Aenean lacinia bibendum</li>
+       <h5>Apoio & Patrocínio</h5>
+
+       <ul>
+           <li><a href="http://www.buscape.com.br" target="_blank"><img width="100" src="/img/apoio/buscapedev.png" /></a></li>
+           <li><a href="http://www.imasters.com.br" target="_blank"><img width="100" src="/img/apoio/imasters.png" /></a></li>
+           <li><a href="http://www.phpburn.com" target="_blank"><img width="100" src="/img/apoio/phpburn.png" /></a></li>
+           <li><a href="http://www.phpsp.org.br" target="_blank"><img width="100" src="/img/apoio/phpsp.png" /></a></li>
        </ul>
 
-       <h5>Ordered List</h5>
 
-       <ol>
-           <li><a href="#">Aenean lacinia bibendum</a></li>
-           <li>Aenean lacinia bibendum</li>
-       </ol>
+        <h5>Sites do Evento</h5>
 
-
+        <ul>
+           <li><a href="http://www.flisol.net" target="_blank">Geral</a></li>
+           <li><a href="http://www.flisolcampinas.net" target="_blank">Campinas</a></li>
+           <li><a href="http://www.twitter.com/flisolcampinas" target="_blank">Twitter</a></li>
+           <li><a href="https://www.facebook.com/flisolcampinas" target="_blank">Página Facebook</a></li>
+           <li><a href="http://flisol.net/FLISOL2013/Brasil" target="_blank">Outras Cidades</a></li>
+       </ul>
    </div><!-- End of footer right -->
 
 </div><!-- End of footer -->
@@ -262,7 +269,14 @@ $(document).ready(function(){
   })();
 
 </script>
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 
 </html>
