@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" ng-app="FlisolAPP" class="ng-scope"><!--[if IE 7 ]>    <html class= "ie7"> <![endif]--><!--[if IE 8 ]>    <html class= "ie8"> <![endif]--><!--[if IE 9 ]>    <html class= "ie9"> <![endif]--><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]--><head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title class="ng-binding">LATAM | Flisol Campinas 2013</title>
+
+<!-- *************************************************************************
+**************************   STYLE SHEET   *******************************
+************************************************************************** -->
+
+<link href="css/main.css" rel="stylesheet" type="text/css">
+
+<script id="facebook-jssdk" src="//connect.facebook.net/pt_BR/all.js#xfbml=1"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" src="js/app/angular.min.js"> </script><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style>
+<script type="text/javascript" src="js/app/flisol.js"> </script>
+
+<!-- *************************************************************************
+**************************        JS       *******************************
+************************************************************************** -->
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"> </script>
+<script type="text/javascript" src="js/hoverIntent.js"> </script>
+<script type="text/javascript" src="js/superfish.js"> </script>
+<script type="text/javascript" src="js/supersubs.js"> </script>
+<script type="text/javascript" src="js/custom.js"> </script>
+<script type="text/javascript" src="js/scrolltopcontrol.js"> </script>
+<script type="text/javascript" src="js/twitter.js"> </script>
+<script type="text/javascript" src="js/jquery.flexslider-min.js"> </script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"> </script>
+<script type="text/javascript" src="js/jquery.quicksand.js"> </script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#form").val();
+});
+</script>
+
+<!-- END OF SCRIPT FOR FORM -->
+<!--Mobile Fix for header-->
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$('.trigger').bind('touchstart', function(){
+        $('ul#.social').addClass('thover');
+        return false;
+    }).bind('touchend', function(){
+        $(this).removeClass('thover');
+    });
+    $('.searchtrigger').bind('touchstart', function(){
+        $('ul#search').addClass('thover');
+        return false;
+    }).bind('touchend', function(){
+        $(this).removeClass('thover');
+    });
+});
+</script>
+<!--End Mobile Script-->
+
+<!-- Menu to Select Setting -->
+<script type="text/javascript">
+// DOM ready
+$(document).ready(function(){
+
+// Create the dropdown base
+$("<select />").appendTo("#top_menu");
+
+// Create default option "Go to..."
+$("<option />", {
+   "selected": "selected",
+   "value"   : "",
+   "text"    : "Menu Selection..."
+}).appendTo("#top_menu select");
+
+// Populate dropdown with menu items
+$("#top_menu a").each(function() {
+    var el = $(this);
+    $("<option />", {
+     "value"   : el.attr("href"),
+     "text"    : el.text()
+ }).appendTo("#top_menu select");
+});
+
+// To make dropdown actually work
+// To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
+$("#top_menu select").change(function() {
+    window.location = $(this).find("option:selected").val();
+});
+
+});
+</script>
+
+<!-- *************************************************************************
+*********************   THIS IS THE SLIDER JS    **************************
+************************************************************************** -->
+<script type="text/javascript">
+$(window).load(function() {
+ $('#slider').flexslider();
+});
+
+</script>
+
+<!-- *************************************************************************
+*********************   THIS IS THE SOCIAL JS    **************************
+************************************************************************** -->
+
+<!--[if lt IE 10]>
+<script type="text/javascript">
+$(document).ready(function(){
+			$('ul.social').hover(function(){
+				$(this).animate({width: "180px"}, {duration:1000, queue:false});
+			}, function(){
+				$(this).animate({width: "30px"}, {duration:1000, queue:false});
+			});
+				});
+                
+                $('div#search').hover(function(){
+				$(this).animate({width: "180px"}, {duration:1000, queue:false});
+			}, function(){
+				$(this).animate({width: "34px"}, {duration:1000, queue:false});
+			});
+				});
+</script>
+<![endif]--> 
+
+<!-- END OF SCRIPT FOR SOCIAL -->
+
+</head>
+
+<body ng-controller="main" class="ng-scope">
+
+<!-- Start of menu wrapper -->
+<div id="menu_wrapper">
+
+	<!-- Start of logo menu wrapper -->
+    <div id="logo_menu_wrapper">
+
+        <!-- Start of top logo -->
+        <div id="top_logo">
+
+            <a href="#!/home/"><img src="img/logo_flisol.png" width="247" alt="top logo"></a>
+
+        </div><!-- End of top logo -->
+        
+        <!-- Start of top menu -->
+        <div id="top_menu">
+
+            <ul class="sf-menu sf-js-enabled sf-shadow">
+
+                <li><a class="active" href="#!/home/">Home</a></li>
+
+                <li><a href="#!/sobre/" class="sf-with-ul">Saiba Mais <span>Sobre</span><span class="sf-sub-indicator"> »</span></a>
+
+                	<ul style="float: none; width: 12em; display: none; visibility: hidden; ">
+                       <li style="float: left; width: 100%; white-space: normal; "><a href="#!/sobre/FLISOL" style="float: none; width: auto; ">O Evento</a></li>
+                       <li style="float: left; width: 100%; white-space: normal; "><a href="#!/sobre/flisol-campinas" style="float: none; width: auto; ">FLISOL CAMPINAS</a></li>
+                       <li style="float: left; width: 100%; white-space: normal; "><a href="#!/sobre/campinas" style="float: none; width: auto; ">Local</a></li>
+                   </ul> 
+
+               </li>
+
+               <li><a href="#!/inscreva-se/">Inscreva-se <span>Inscreva-se!</span></a></li>
+
+               <li><a href="http://bit.ly/W8UiYA" target="_blank">Envie Sua Palestra <span>Participe!</span></a></li>
+
+               <!--<li><a href="#!/contato/">Organização <span>Fale com a Gente</span></a></li>-->
+
+           </ul>
+
+       <select><option selected="selected" value="">Menu Selection...</option><option value="#!/home/">Home</option><option value="#!/sobre/">Saiba Mais Sobre »</option><option value="#!/sobre/FLISOL">O Evento</option><option value="#!/sobre/flisol-campinas">FLISOL CAMPINAS</option><option value="#!/sobre/campinas">Local</option><option value="#!/inscreva-se/">Inscreva-se Inscreva-se!</option><option value="http://bit.ly/W8UiYA">Envie Sua Palestra Participe!</option></select></div><!-- End of top menu --> 
+
+       <div class="clear"></div>        
+
+   </div><!-- End of logo menu wrapper -->
+
+</div><!-- End of menu wrapper -->
+
+<!-- Content Area -->
+<div id="contentContainer" ng-view=""><!-- BreadCrumb, Slider, Page, Etc... -->
+<div ng-include="" src="'/partials/sliderTemplate.html'" id="slider_wrapper" class="ng-scope"><!-- Start of breadcrumb wrapper -->
+<div id="breadcrumb_wrapper" class="ng-scope">
+
+    <h1 class="ng-binding">Flisol 2013</h1>
+
+    <!-- Start of breadcrumb -->
+    <div id="breadcrumb">
+
+        <!-- Start of breadcrumb ul -->
+        <ul>
+
+            <li><a href="/">Home</a></li>
+            <!-- ngRepeat: bread in breadCrumb --><li ng-repeat="bread in breadCrumb" class="ng-scope ng-binding">›&nbsp; Sobre o Flisol</li><li ng-repeat="bread in breadCrumb" class="ng-scope ng-binding">›&nbsp; Na América Latina</li>
+
+        </ul><!-- End of breadcrumb ul -->
+        
+    </div><!-- End of breadcrumb -->
+
+</div><!-- End of breadcrumb wrapper -->
+</div>
+<!-- /BreadCrumb, Slider, Page, Etc... -->
+
+<!-- Start of wrapper -->
+<div id="wrapper" class="ng-scope">
+
+  <!-- Start of left content wrapper -->
+  <div class="left_content_wrapper">
+
+    <!-- Start of post -->
+    <div class="post">
+
+      <h4>O FLISOL</h4>
+
+      <img src="/img/2013/banner2013.png">
+
+      <br> <br>
+
+      <p>O Festival Latino-americano de Instalação de Software Livre - é o maior evento de divulgação de Software Livre da América Latina. Ele acontece desde 2005 e seu principal objetivo é promover o uso de software livre, apresentando sua filosofia, seu alcance, avanços e desenvolvimento ao público em geral.</p>
+
+      <p>Com esta finalidade, diversas comunidades locais de software livre (em cada país, em cada cidade/localidade), organizam simultaneamente eventos em que se instala gratuitamente e totalmente legal, software livre nos computadores levados pelos participantes. Também, paralelamente, são oferecidas apresentações, palestras e oficinas, sobre temas locais, nacionais e latinoamericanos sobre Software Livre, com toda sua variedade de expressões: artística, acadêmica, empresarial e social.</p>
+
+      <p>O <a href="http://www.flisol.net" target="_blank" class="highlight">FLISOL 2013</a> acontece no dia 27 de Abril em diversas da América Latina!</p>
+
+      <p>Veja aqui os detalhes de <a href="#!/sobre/campinas/" class="highlight">Campinas, SP</a>.</p>
+    </div><!-- End of post -->
+
+  </div><!-- End of left content wrapper -->
+
+  <!-- Start of right content wrapper -->
+  <div ng-include="" src="'/partials/rightSideInclude.html'" class="right_content_wrapper">
+<!-- Start of text widget -->
+<div class="text_widget ng-scope">
+
+  <h2>FLISOL 2013</h2>
+
+  <ul class="contact">
+    <li><span class="contact_title">Quando?</span></li>
+    <li>Sábado | 27 de Abril</li>
+    <li>09:00 - 17:00</li>
+  </ul>        
+
+  <ul class="contact">
+    <li><span class="contact_title">Onde?</span></li>
+    <li><a href="http://www.policamp.edu.br" target="_blank">Falculdade POLICAMP</a></li>
+    <li>Rua Luiz Otávio, 1281 | Pq. Sta. Cândida</li>
+    <li>Campinas | São Paulo</li>
+  </ul>
+
+  <ul class="contact">
+    <li><span class="contact_title">Coordenação ( Campinas )</span></li>
+    <li><a href="mailto:klederson@klederson.com">Klederson Bueno</a> | Geral</li>
+    <li><a href="#">Alê Borba</a> | Relacionamento</li>
+    <li><a href="mailto:contato@eliasgranja.com">Elias Granja</a> | Conteúdo/Relacionamento </li>
+    <li><a href="#">Priscila Mayumi</a> | Patrocínio/Conteúdo</li>
+    <li><a href="#">Augusto Pascutti</a> | Palestras</li>
+    <li><a href="#">André Déo</a> | Geral</li>
+    <li><a href="#">Clóvis Tristão</a> | Conteúdo </li>
+  </ul>
+  
+  <ul class="contact">
+    <li><span class="contact_title">Colaboradores</span></li>
+    <li><a href="mailto:ericatamiris@gmail.com">Érica Tamiris</a> | Mat. Gráfico</li>
+    <li><a href="#">Ricardo Pontes</a> | Brindes </li>
+    <li><a href="#">André Déo</a> | Local e Infra</li>
+  </ul>
+  
+
+</div><!-- End of text widget -->  
+
+<!-- Start of text widget -->
+<div class="text_widget ng-scope">
+
+  <h2>Como Chegar?</h2>
+
+  <iframe width="auto" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=-22.85170,-47.04363&amp;output=embed"></iframe><br>
+
+</div><!-- End of text widget -->    </div><!-- End of right content wrapper -->
+
+</div><!-- End of wrapper -->
+
+</div>
+<!-- /Content Area -->
+<div class="clear"></div>
+
+<!-- Start of footer wrapper -->
+<div id="footer_wrapper">
+
+	<!-- Start of footer -->
+    <div id="footer">
+
+        <!-- Start of footer widget -->
+        <div id="footer_widget">
+
+            <a href="#"><img src="img/footer_logo.png" alt="bottom logo" style="opacity: 1; "></a>
+
+            <p>FLISOL Campinas 2013.</p>
+
+            <div class="fb-like" data-href="http://www.facebook.com/flisolcampinas/" data-send="true" data-width="100" data-show-faces="true" data-colorscheme="dark"></div>
+
+        </div><!-- End of footer widget -->
+
+        <!-- Start of footer tweet -->
+        <div id="footer_tweet">
+
+            <!-- Start of twitter message content -->
+            <div class="twitter_message_content">
+
+               <!-- Start of tweet -->
+               <div class="tweet">
+
+               <ul class="tweet_list"><li class="tweet_first tweet_odd"><a class="tweet_avatar" href="http://twitter.com/flisolcampinas"><img src="http://a0.twimg.com/profile_images/3366572472/5fb5f9af30ecb0f11d9cf5a92f442017_normal.png" height="47" width="47" alt="flisolcampinas's avatar" title="flisolcampinas's avatar" border="0"></a><span class="tweet_time"><a href="http://twitter.com/flisolcampinas/statuses/319216372058058750" title="view tweet on twitter">about 1 day ago</a></span><span class="tweet_join"> we said, </span><span class="tweet_text">Alguém disponível de gravar depoimentos durante o FLISOL Campinas 2013? Entre em contato! E vc? N se inscreveu? <a href="http://t.co/J4UKYTjNRw">http://t.co/J4UKYTjNRw</a></span></li><li class="tweet_even"><a class="tweet_avatar" href="http://twitter.com/flisolcampinas"><img src="http://a0.twimg.com/profile_images/3366572472/5fb5f9af30ecb0f11d9cf5a92f442017_normal.png" height="47" width="47" alt="flisolcampinas's avatar" title="flisolcampinas's avatar" border="0"></a><span class="tweet_time"><a href="http://twitter.com/flisolcampinas/statuses/316617058374778900" title="view tweet on twitter">about 8 days ago</a></span><span class="tweet_join"> we said, </span><span class="tweet_text">Já se inscreveu no Flisol Campinas 2013 ? Estamos com surpresas bacanas pra vocês este ano, aproveite, é gratuito <a href="http://t.co/J4UKYTjNRw">http://t.co/J4UKYTjNRw</a></span></li></ul><ul class="tweet_list"><li class="tweet_first tweet_odd"><a class="tweet_avatar" href="http://twitter.com/flisolcampinas"><img src="http://a0.twimg.com/profile_images/3366572472/5fb5f9af30ecb0f11d9cf5a92f442017_normal.png" height="47" width="47" alt="flisolcampinas's avatar" title="flisolcampinas's avatar" border="0"></a><span class="tweet_time"><a href="http://twitter.com/flisolcampinas/statuses/319216372058058750" title="view tweet on twitter">about 1 day ago</a></span><span class="tweet_join"> we said, </span><span class="tweet_text">Alguém disponível de gravar depoimentos durante o FLISOL Campinas 2013? Entre em contato! E vc? N se inscreveu? <a href="http://t.co/J4UKYTjNRw">http://t.co/J4UKYTjNRw</a></span></li><li class="tweet_even"><a class="tweet_avatar" href="http://twitter.com/flisolcampinas"><img src="http://a0.twimg.com/profile_images/3366572472/5fb5f9af30ecb0f11d9cf5a92f442017_normal.png" height="47" width="47" alt="flisolcampinas's avatar" title="flisolcampinas's avatar" border="0"></a><span class="tweet_time"><a href="http://twitter.com/flisolcampinas/statuses/316617058374778900" title="view tweet on twitter">about 8 days ago</a></span><span class="tweet_join"> we said, </span><span class="tweet_text">Já se inscreveu no Flisol Campinas 2013 ? Estamos com surpresas bacanas pra vocês este ano, aproveite, é gratuito <a href="http://t.co/J4UKYTjNRw">http://t.co/J4UKYTjNRw</a></span></li></ul></div><!-- End of tweet -->
+
+           </div><!-- End of twitter message content -->
+
+       </div><!-- End of footer tweet -->
+
+       <!-- Start of footer right -->
+       <div class="footer_right">
+
+
+       <h5>Apoio &amp; Patrocínio</h5>
+
+       <ul>
+           <li><a href="http://www.buscape.com.br" target="_blank"><img width="100" src="/img/apoio/buscapedev.png" style="opacity: 1; "></a></li>
+           <li><a href="http://www.imasters.com.br" target="_blank"><img width="100" src="/img/apoio/imasters.png" style="opacity: 1; "></a></li>
+           <li><a href="http://www.phpburn.com" target="_blank"><img width="100" src="/img/apoio/phpburn.png" style="opacity: 1; "></a></li>
+           <li><a href="http://www.phpsp.org.br" target="_blank"><img width="100" src="/img/apoio/phpsp.png" style="opacity: 1; "></a></li>
+       </ul>
+
+
+        <h5>Sites do Evento</h5>
+
+        <ul>
+           <li><a href="http://www.flisol.net" target="_blank">Geral</a></li>
+           <li><a href="http://www.flisolcampinas.net" target="_blank">Campinas</a></li>
+           <li><a href="http://www.twitter.com/flisolcampinas" target="_blank">Twitter</a></li>
+           <li><a href="https://www.facebook.com/flisolcampinas" target="_blank">Página Facebook</a></li>
+           <li><a href="http://flisol.net/FLISOL2013/Brasil" target="_blank">Outras Cidades</a></li>
+       </ul>
+   </div><!-- End of footer right -->
+
+</div><!-- End of footer -->
+
+<div class="clear"></div>
+
+</div><!-- End of footer wrapper -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1167851-14']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px; "><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; " src="http://static.ak.facebook.com/connect/xd_arbiter.php?version=21#channel=f980e9718&amp;origin=http%3A%2F%2Fwww.flisolcampinas.net&amp;channel_path=%2F%3Ffb_xd_fragment%23xd_sig%3Df7a069124%26"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; " src="https://s-static.ak.facebook.com/connect/xd_arbiter.php?version=21#channel=f980e9718&amp;origin=http%3A%2F%2Fwww.flisolcampinas.net&amp;channel_path=%2F%3Ffb_xd_fragment%23xd_sig%3Df7a069124%26"></iframe></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+<div id="topcontrol" style="position: fixed; bottom: 5px; right: 0px; opacity: 0; cursor: pointer; " title="Scroll Back to Top"><img src="img/up.png" style="width:120px; height:26px"></div></body></html>
