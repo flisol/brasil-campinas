@@ -890,7 +890,7 @@ extraWidth:  1     // extra width can ensure lines don't sometimes turn over
 
 $(document).ready(function(){
 $(".tweet").tweet({
-	username: "@flisolcampinas",
+	username: "flisolcampinas",
 	join_text: "auto",
 	avatar_size: 47,
 	count: 2,
