@@ -11,6 +11,14 @@ $routes['users/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)'] = "InscricoesAPI/$1/$2"
 $routes['users/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)'] = "InscricoesAPI/$1/$2/$3";
 $routes['users/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)'] = "InscricoesAPI/$1/$2/$3/$4";
 
+
+$routes['palestras'] = "PalestrasAPI";
+$routes['palestras/([[:alnum:]&:-@_]+)'] = "PalestrasAPI/$1";
+$routes['palestras/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)'] = "PalestrasAPI/$1/$2";
+$routes['palestras/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)'] = "PalestrasAPI/$1/$2/$3";
+$routes['palestras/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)'] = "PalestrasAPI/$1/$2/$3/$4";
+
+
 $routes['inscricoes'] = "InscricoesAPI";
 $routes['inscricoes/([[:alnum:]&:-@_]+)'] = "InscricoesAPI/$1";
 $routes['inscricoes/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)'] = "InscricoesAPI/$1/$2";

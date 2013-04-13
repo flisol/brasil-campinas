@@ -39,6 +39,10 @@ class Inscricoes extends PhpBURN_Core {
     $this->getMap()->addField( "tipo","tipo", 'enum', "('staff','palestrante','regular','vip','press')", array('default_value' => 'regular') );
     $this->getMap()->addField( "dataCriacao","dataCriacao", "timestamp", null, array("not_null" => 1, "default_value" => 'CURRENT_TIMESTAMP') );
 
+    $this->getMap()->addRelationship("Palestras", self::ONE_TO_MANY, "Palestras", "idInscricao", "idPalestrante");
+    $this->getMap()->addRelationship("Presencas", self::ONE_TO_MANY, "Presencas", "idInscricao", "idInscricao");
+
+
   }
   
   /* Do not change anything above this line unless you really know what are you doing */

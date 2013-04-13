@@ -33,37 +33,14 @@ class Palestras extends PhpBURN_Core {
     $this->getMap()->addField( "idPalestrante","idPalestrante", "int", 10, array("not_null" => 1) );
     $this->getMap()->addField( "titulo","titulo", "varchar", 50, array("not_null" => 1) );
     $this->getMap()->addField( "resumo","resumo", "varchar", 255, array("not_null" => 1) );
-    $this->getMap()->addField( "local","local", "varchar", 255, array("not_null" => 1) );
     $this->getMap()->addField( "descricao","descricao", "text", NULL, array("not_null" => 1) );
     $this->getMap()->addField( "data","data", "datetime", NULL, array("not_null" => 1) );
+    $this->getMap()->addField( "status", "status", "enum", "submetida,aprovada,rejeitada,cancelada,executada", ["not_null" => 1, "default" => "submetida"]);
     $this->getMap()->addField( "dataCriacao","dataCriacao", "timestamp", null, array("not_null" => 1, "default_value" => 'CURRENT_TIMESTAMP') );
-
   }
   
   /* Do not change anything above this line unless you really know what are you doing */
   /* Put all your customized code bellow this line */
-  
-  public function getUrl() {
-    $url = $this->titulo;
-    
-    $table = array(
-        'Š'=>'S', 'š'=>'s', 'Đ'=>'Dj', 'đ'=>'dj', 'Ž'=>'Z', 'ž'=>'z', 'Č'=>'C', 'č'=>'c', 'Ć'=>'C', 'ć'=>'c',
-        'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A', 'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E',
-        'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I', 'Ï'=>'I', 'Ñ'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O',
-        'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U', 'Û'=>'U', 'Ü'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'Ss',
-        'à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a', 'å'=>'a', 'æ'=>'a', 'ç'=>'c', 'è'=>'e', 'é'=>'e',
-        'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i', 'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ò'=>'o', 'ó'=>'o',
-        'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u', 'ú'=>'u', 'û'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b',
-        'ÿ'=>'y', 'Ŕ'=>'R', 'ŕ'=>'r', ' ' => '_'
-    );
-    
-    $url = strtr($url,$table);
-    $url = strtolower($url);
-    
-    $url = $this->idPalestra . ',' . $url;
-    
-    return $url;
-  }
   
 }
 ?>
