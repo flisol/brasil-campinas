@@ -1,4 +1,4 @@
-angular.module('FlisolAPP', [], function ($routeProvider, $locationProvider) {
+angular.module('FlisolAPP', ['ngResource'], function ($routeProvider, $locationProvider) {
 
     $routeProvider.when('/', {
         templateUrl: 'partials/home.html',
@@ -40,22 +40,22 @@ angular.module('FlisolAPP', [], function ($routeProvider, $locationProvider) {
         controller: AboutCrtl
     });
 
-    $routeProvider.when('/palestras/', {
-        templateUrl: 'partials/users.html',
-        controller: PresentationsCrtl
-    });
+    //$routeProvider.when('/palestras/', {
+    //    templateUrl: 'partials/users.html',
+    //    controller: PresentationsCrtl
+    //});
 
-    $routeProvider.when('/palestrantes/:id', {
-        templateUrl: 'partials/users.html',
-        controller: SpeechersCrtl
-    });
+$routeProvider.when('/palestrantes/:id', {
+    templateUrl: 'partials/users.html',
+    controller: SpeechersCrtl
+});
 
-    $routeProvider.when('/contato/', {
-        templateUrl: 'partials/contact.html',
-        controller: ContactCrtl
-    });
+$routeProvider.when('/contato/', {
+    templateUrl: 'partials/contact.html',
+    controller: ContactCrtl
+});
 
-    $locationProvider.hashPrefix('!');
+$locationProvider.hashPrefix('!');
 
 });
 
@@ -146,8 +146,20 @@ function ContactCrtl($scope, $routeParams, $rootScope) {
 
 }
 
-function PresentationsCrtl($scope, $routeParams, $rootScope) {
+function ListaPalestras($scope, $resource, $http) {
+    $http.defaults.headers.common['Content-Type'] = 'application/json';
 
+    $scope.palestras = $resource("http://api.flisolcampinas.net/palestras/:action/",
+        { action : 'find'},
+        { 
+            get : { 
+                method : "JSONP"
+            }
+        }
+    );
+
+    $scope.palestras.get();
+    
 }
 
 function SpeechersCrtl($scope, $routeParams, $rootScope) {

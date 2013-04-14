@@ -60,9 +60,9 @@
             
                 <a href="#"><img src="img/callforpapers.jpg" alt="Call for papers" /></a>
                 <div class="mask">
-                    <h5>CALL FOR PAPERS</h5>
-                    <p>Cadastre sua palestra e/ou workshop e nos ajude a tornar este evento ainda melhor.</p>
-                    <a class="info" href="http://bit.ly/W8UiYA">Cadastre-se</a>
+                    <h5>Palestras Aprovadas</h5>
+                    <p>Veja a nossa grade de palestras</p>
+                    <a class="info" href="http://bit.ly/W8UiYA">Confira!</a>
                 </div>
                 
                 </div><!-- End of featured image portfolio -->
@@ -162,6 +162,62 @@
     </div><!-- End of client wrapper -->
     
     <div class="clear"></div>
+
+    <div ng-controller="ListaPalestras" id="recent_post_wrapper">
+    
+    <h2>RECENT POSTS</h2>
+    
+        <!-- Start of one third first -->
+        <div ng-repeat="palestra in palestras" class="{{listClass}}">
+            
+            <!-- Start of featured content portfolio -->
+            <div class="featured_content_portfolio">
+            
+            <h5><a href="#">{{palestra.titulo}}</a></h5>
+            
+            <p ng-model="palestra.resumo">Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in.</p>
+            
+            <!-- <div class="blog_readmore"><a href="#">Saber Mais</a></div> -->
+            
+            </div><!-- End of featured content portfolio -->
+        
+        </div><!-- End of one third first -->
+        
+        <!-- Start of one third -->
+        <div class="one_third">
+        
+            
+            <!-- Start of featured content portfolio -->
+            <div class="featured_content_portfolio">
+            
+            <h5><a href="#">Project Two</a></h5>
+            
+            <p>Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in.</p>
+            
+            <div class="blog_readmore"><a href="#">Read More</a></div>
+            
+            </div><!-- End of featured content portfolio -->
+        
+        </div><!-- End of one third -->
+        
+        <!-- Start of one third -->
+        <div class="one_third">
+        
+            
+            <!-- Start of featured content portfolio -->
+            <div class="featured_content_portfolio">
+            
+            <h5><a href="#">Project Three</a></h5>
+            
+            <p>Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in.</p>
+            
+            <div class="blog_readmore"><a href="#">Read More</a></div>
+            
+            </div><!-- End of featured content portfolio -->
+        
+        </div><!-- End of one third -->
+    
+    </div>
     
  
 <div class="clear"></div>
