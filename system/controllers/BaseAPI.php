@@ -17,6 +17,7 @@ abstract class BaseAPI extends RestServer {
   const AUTH_FAIL = "AUTH FAIL";
 
   protected $allowedContentTypes = array(
+      '' => 'json',
       'application/json' => 'json',
       'application/x-www-form-urlencoded' => 'json',
       'text/plain' => 'json'
