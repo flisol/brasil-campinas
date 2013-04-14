@@ -111,6 +111,8 @@ class PalestrasAPI extends BaseAPI {
 
     $model = new Palestras;
 
+    $model->where('status','=','aprovada');
+
     if(!empty($filter)) {
       $serchFields =["titulo","resumo","descricao"];
 
