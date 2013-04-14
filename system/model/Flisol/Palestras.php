@@ -38,7 +38,7 @@ class Palestras extends PhpBURN_Core {
     $this->getMap()->addField( "status", "status", "enum", "submetida,aprovada,rejeitada,cancelada,executada", ["not_null" => 1, "default" => "submetida"]);
     $this->getMap()->addField( "dataCriacao","dataCriacao", "timestamp", null, array("not_null" => 1, "default_value" => 'CURRENT_TIMESTAMP') );
 
-    $this->getMap()->addRelationship("Palestrante", self::MANY_TO_MANY, "Inscricoes", "idPalestrante", "idInscricao", "idFile", "idFile", "Patrocinadores_has_Files");
+    $this->getMap()->addRelationship("Palestrante", self::ONE_TO_ONE, "Inscricoes", "idPalestrante", "idInscricao");
   }
   
   /* Do not change anything above this line unless you really know what are you doing */
