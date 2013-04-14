@@ -147,18 +147,19 @@ function ContactCrtl($scope, $routeParams, $rootScope) {
 }
 
 function ListaPalestras($scope, $resource, $http) {
-    $http.defaults.headers.common['Content-Type'] = 'application/json';
-
-    $scope.palestras = $resource("http://api.flisolcampinas.net/palestras/:action/",
+    $scope.palestras = [];
+    $scope.api = $resource("http://api.flisolcampinas.net/:type/:action/",
         { action : 'find'},
         { 
             get : { 
-                method : "JSONP"
+                method : "GET"
             }
         }
     );
 
-    $scope.palestras.get();
+    $scope.api.get({type : "palestras", action : "find"}, function(data) {
+        $scope.palestras = data.content.content;
+    });
     
 }
 
