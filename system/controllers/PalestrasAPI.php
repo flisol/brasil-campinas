@@ -131,9 +131,6 @@ class PalestrasAPI extends BaseAPI {
       //parsear item a item pra poder remover o RG
       while($model->fetch()) {
         $model->getRelationship('Palestrante');
-        $model->Palestrante->fetch();
-        $model->Palestrante->rg = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
-        $model->Palestrante->email = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
         $model->idPalestrante = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
         $response['content'][] = $model->toArray();
       }
