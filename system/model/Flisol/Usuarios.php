@@ -39,8 +39,6 @@ class Usuarios extends PhpBURN_Core {
     $this->getMap()->addField( "genero","genero", "enum('m','f')", null, array("not_null" => 1) );
     $this->getMap()->addField( "nascimento","nascimento", "datetime", null, array("not_null" => 1) );
     $this->getMap()->addField( "dataCriacao","dataCriacao", "timestamp", null, array("not_null" => 1, "default_value" => 'CURRENT_TIMESTAMP') );
-
-    $this->getMap()->addRelationship("Posts", self::ONE_TO_MANY, "Posts", "idUsuario", "idAutor");
   }
   
   /* Do not change anything above this line unless you really know what are you doing */

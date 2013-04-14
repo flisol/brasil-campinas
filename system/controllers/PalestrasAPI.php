@@ -109,35 +109,37 @@ class PalestrasAPI extends BaseAPI {
 
     $page = $page <= 1 ? 0 : $page - 1;
 
-    $users = new Inscricoes;
+    $model = new Palestras;
 
     if(!empty($filter)) {
-      $serchFields =["nome","sobrenome","email","cidade","estado"];
+      $serchFields =["titulo","resumo","descricao"];
 
       //definir dentro dos campos "buscáveis" um like pro filtro
       foreach($serchFields as $field) {
         $search ="%$filter%";
-        $users->like($field,$search,'OR'); //adiciona o like pro campo $field
+        $model->like($field,$search,'OR'); //adiciona o like pro campo $field
       }
     }
 
     //define a paginação e faz a busca
-    if( $users->limit($page*$amount,$amount)->find() > 0 ) {
+    if( $model->limit($page*$amount,$amount)->find() > 0 ) {
       $httpStatus = 200;
       $response['status'] = self::OK;
-      $message = sprintf("(%s) usuário(s) encontrado(s)",$users->getAmount());
+      $message = sprintf("(%s) usuário(s) encontrado(s)",$model->getAmount());
       $response['messages']['success'] = PhpBURN_Views::lazyTranslate($message);
 
       //parsear item a item pra poder remover o RG
-      while($users->fetch()) {
-        $users->rg = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
-        $users->email = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
-        $response['content'][] = $users->toArray();
+      while($model->fetch()) {
+        $model->getRelationship('Palestrante')->fetch();
+        $model->Palestrante->rg = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
+        $model->Palestrante->email = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
+        $model->idPalestrante = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
+        $response['content'][] = $model->toArray();
       }
     } else {
       $httpStatus = 400;
       $response['status'] = self::ERROR;
-      $response['messages']['error'] = PhpBURN_Views::lazyTranslate("[!Nenhum usuário encontrado!]");
+      $response['messages']['error'] = PhpBURN_Views::lazyTranslate("[!Nenhuma palestra encontrada!]");
     }
 
     //envia resposta pro browser
