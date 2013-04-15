@@ -82,7 +82,7 @@ class PalestrasAPI extends BaseAPI {
       $httpStatus = 200;
       $model->fetch();
       $model->getRelationship('Palestrante');
-      $model->idPalestrante = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
+      $model->idPalestrante = "###";
       $response['content'] = $model->toArray();
       $response['status'] = self::OK;
       $response['messages']['success'] = PhpBURN_Views::lazyTranslate("[!Palestra Encontrada!]");
