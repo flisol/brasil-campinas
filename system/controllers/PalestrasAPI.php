@@ -80,6 +80,7 @@ class PalestrasAPI extends BaseAPI {
 
     if($model->where('idPalestra','=',$id)->find() == 1) {
       $httpStatus = 200;
+      $model->fetch();
       $model->getRelationship('Palestrante');
       $model->idPalestrante = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
       $response['content'] = $model->toArray();
