@@ -76,11 +76,13 @@ class PalestrasAPI extends BaseAPI {
     if ($this->getMethod() != 'get')
       $this->sendResponse(405);
 
-    $palestra = new Palestras();
+    $model = new Palestras();
 
-    if($palestra->where('idPalestra','=',$id)->find() == 1) {
+    if($model->where('idPalestra','=',$id)->find() == 1) {
       $httpStatus = 200;
-      $response['content'] = $palestra->toArray();
+      $model->getRelationship('Palestrante');
+      $model->idPalestrante = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
+      $response['content'] = $model->toArray();
       $response['status'] = self::OK;
       $response['messages']['success'] = PhpBURN_Views::lazyTranslate("[!Palestra Encontrada!]");
     } else {
@@ -133,7 +135,7 @@ class PalestrasAPI extends BaseAPI {
       //parsear item a item pra poder remover o RG
       while($model->fetch()) {
         $model->getRelationship('Palestrante');
-        $model->idPalestrante = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
+        $model->idPalestrante = "###";
         $response['content'][] = $model->toArray();
       }
     } else {
