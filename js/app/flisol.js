@@ -10,6 +10,11 @@ angular.module('FlisolAPP', ['ngResource'], function ($routeProvider, $locationP
         controller: main
     });
 
+    $routeProvider.when('/palestras/', {
+        templateUrl: 'partials/palestras.html',
+        controller: main
+    });
+
     $routeProvider.when('/sobre/', {
         templateUrl: 'partials/aboutFlisol.html',
         controller: AboutFlisolCrtl

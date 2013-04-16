@@ -1,0 +1,52 @@
+<!-- BreadCrumb, Slider, Page, Etc... -->
+<div ng-include src="'/partials/sliderTemplate.html'" id="slider_wrapper">
+
+</div>
+<!-- /BreadCrumb, Slider, Page, Etc... -->
+
+<!-- Start of wrapper -->
+<div id="wrapper">
+
+  <!-- Start of left content wrapper -->
+  <div class="left_content_wrapper">
+
+      <!-- Start of post -->
+      <div class="post">
+
+       <div ng-controller="ListaPalestras" id="recent_post_wrapper">
+         <img src="img/divider.png" alt="divider" width="960" height="30" style="padding:20px 0 20px 0;"/>
+    
+    <h2>PALESTRAS APROVADAS (so far)</h2>
+     <img src="img/divider.png" alt="divider" width="960" height="30" style="padding:20px 0 20px 0;"/>
+        <!-- Start of one third first -->
+        <div ng-repeat="palestra in palestras">
+            
+            <!-- Start of featured content portfolio -->
+            <div class="featured_content_portfolio">
+            
+            <h5><a href="#">{{palestra.titulo}}</a></h5>
+            <small>{{palestra.Palestrante[0].nome}} {{palestra.Palestrante[0].sobrenome}}</small>
+            
+            <p ng-bind="palestra.resumo">Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in.</p>
+            
+            <!-- <div class="blog_readmore"><a href="#">Saber Mais</a></div> -->
+            
+            </div><!-- End of featured content portfolio -->
+        
+        </div><!-- End of one third first -->
+    
+    
+    </div>
+
+        </div><!-- End of post -->
+
+    </div><!-- End of left content wrapper -->
+    
+    <!-- Start of right content wrapper -->
+    <div ng-include src="'/partials/rightSideInclude.html'" class="right_content_wrapper">
+
+
+    </div><!-- End of right content wrapper -->
+
+</div><!-- End of wrapper -->
+</html>
