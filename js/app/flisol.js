@@ -22,7 +22,7 @@ angular.module('FlisolAPP', ['ngResource'], function ($routeProvider, $locationP
 
     $routeProvider.when('/palestras/', {
         templateUrl: 'partials/palestras.html',
-        controller: main
+        controller: ListaPalestras
     });
 
     $routeProvider.when('/palestras/:ano/:id/:titulo', {
@@ -175,7 +175,11 @@ function ContactCrtl($scope, $routeParams, $rootScope) {
 
 }
 
-function ListaPalestras($scope, $resource, $http) {
+function ListaPalestras($scope, $resource, $rootScope) {
+    $scope.areaTitle = "Palestras Flisol Campinas 2013";
+    $rootScope.pageTitle = "Flisol Campinas | Palestras";
+    $scope.breadCrumb = ["Flisol Campinas" , "2013", "Palestras"];
+
     $scope.palestras = [];
     $scope.api = $resource("http://api.flisolcampinas.net/:type/:action/",
         { action : 'find'},
