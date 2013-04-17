@@ -200,7 +200,7 @@ img { -ms-interpolation-mode: bicubic; }
 .four_fifth,
 .one_sixth {
 	position: relative;
-	margin-left: 4%;
+	margin-left: 10em;
 	margin-bottom: 20px;
 	float: left;
 	}
