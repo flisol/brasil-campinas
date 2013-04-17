@@ -15,6 +15,11 @@ angular.module('FlisolAPP', ['ngResource'], function ($routeProvider, $locationP
         controller: main
     });
 
+    $routeProvider.when('/palestras/:ano/:titulo', {
+        templateUrl: 'partials/palestra.html',
+        controller: DetalhePalestra
+    });
+
     $routeProvider.when('/sobre/', {
         templateUrl: 'partials/aboutFlisol.html',
         controller: AboutFlisolCrtl
@@ -62,6 +67,15 @@ $routeProvider.when('/contato/', {
 
 $locationProvider.hashPrefix('!');
 
+}).factory("ApiFlisol", function($resource) {
+    return $resource("http://api.flisolcampinas.net/:type/:action/:id/:extra/",
+        { action : "@action", type : "@type" },
+        { 
+            get : { 
+                method : "GET"
+            }
+        }
+    );
 });
 
 // Controllers
@@ -166,6 +180,14 @@ function ListaPalestras($scope, $resource, $http) {
         $scope.palestras = data.content.content;
     });
     
+}
+
+function DetalhePalestra($scope, $routeParams, $rootScope, $resource, ApiFlisol) {
+    $scope.areaTitle = "Flisol Campinas 2013";
+    $scope.breadCrumb = ["Sobre o Flisol", "Campinas 2013"];
+    $rootScope.pageTitle = "Onde e Como?";
+
+    $scope.palestra = ApiFlisol.get({ type : "palestras" , action : "get" , id : $routeParams.ano, extra : $routeParams.titulo });
 }
 
 function SpeechersCrtl($scope, $routeParams, $rootScope) {
