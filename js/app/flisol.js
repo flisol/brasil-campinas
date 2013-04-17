@@ -15,7 +15,7 @@ angular.module('FlisolAPP', ['ngResource'], function ($routeProvider, $locationP
         controller: main
     });
 
-    $routeProvider.when('/palestras/:ano/:titulo', {
+    $routeProvider.when('/palestras/:ano/:id/:titulo', {
         templateUrl: 'partials/palestra.html',
         controller: DetalhePalestra
     });
@@ -187,7 +187,7 @@ function DetalhePalestra($scope, $routeParams, $rootScope, $resource, ApiFlisol)
     $scope.breadCrumb = ["Sobre o Flisol", "Campinas 2013"];
     $rootScope.pageTitle = "Onde e Como?";
 
-    $scope.palestra = ApiFlisol.get({ type : "palestras" , action : "get" , id : $routeParams.ano, extra : $routeParams.titulo });
+    $scope.palestra = ApiFlisol.get({ type : "palestras" , action : "get" , id : $routeParams.id });
 }
 
 function SpeechersCrtl($scope, $routeParams, $rootScope) {
