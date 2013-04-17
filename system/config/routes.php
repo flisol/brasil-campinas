@@ -13,6 +13,7 @@ $routes['users/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)/([[:a
 
 
 $routes['palestras'] = "PalestrasAPI";
+$routes['palestras/get/([0-9]+){4}/([0-9])+/([[:alnum:]&:-@_]+)'] = "PalestrasAPI/get/$3";
 $routes['palestras/([[:alnum:]&:-@_]+)'] = "PalestrasAPI/$1";
 $routes['palestras/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)'] = "PalestrasAPI/$1/$2";
 $routes['palestras/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)/([[:alnum:]&:-@_]+)'] = "PalestrasAPI/$1/$2/$3";
