@@ -176,7 +176,7 @@ function ContactCrtl($scope, $routeParams, $rootScope) {
 }
 
 function ListaPalestras($scope, $resource, $rootScope) {
-    $scope.areaTitle = "Palestras Flisol Campinas 2013";
+    $scope.areaTitle = "Palestras Aprovadas | Flisol Campinas 2013";
     $rootScope.pageTitle = "Flisol Campinas | Palestras";
     $scope.breadCrumb = ["Flisol Campinas" , "2013", "Palestras"];
 
