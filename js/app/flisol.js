@@ -184,10 +184,12 @@ function ListaPalestras($scope, $resource, $http) {
 
 function DetalhePalestra($scope, $routeParams, $rootScope, $resource, ApiFlisol) {
     $scope.areaTitle = "Flisol Campinas 2013";
-    $scope.breadCrumb = ["Sobre o Flisol", "Campinas 2013"];
-    $rootScope.pageTitle = "Onde e Como?";
+    $rootScope.pageTitle = "Flisol Campinas | Palestras";
 
-    $scope.palestra = ApiFlisol.get({ type : "palestras" , action : "get" , id : $routeParams.id });
+    $scope.palestra = ApiFlisol.get({ type : "palestras" , action : "get" , id : $routeParams.id }, function(data) {
+        $rootScope.pageTitle = $scope.palestra.content.content.titulo + "| Palestras";
+        $scope.breadCrumb = ["Flisol Campinas", $routeParams.ano, "Palestras" , data.content.content.titulo];
+    });
 }
 
 function SpeechersCrtl($scope, $routeParams, $rootScope) {
