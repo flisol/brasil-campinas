@@ -1,3 +1,13 @@
+String.prototype.replaceAll = function(token, replacement){
+  var str = this.toString();
+  var pos = str.indexOf(token);
+  while (pos > -1) {
+    str = str.replace(token, replacement);
+    pos = str.indexOf(token);
+  }
+  return (str);
+}
+
 angular.module('FlisolAPP', ['ngResource'], function ($routeProvider, $locationProvider) {
 
     $routeProvider.when('/', {
