@@ -1,4 +1,14 @@
-angular.module('FlisolAPP', [], function ($routeProvider, $locationProvider) {
+String.prototype.replaceAll = function(token, replacement){
+  var str = this.toString();
+  var pos = str.indexOf(token);
+  while (pos > -1) {
+    str = str.replace(token, replacement);
+    pos = str.indexOf(token);
+  }
+  return (str);
+}
+
+angular.module('FlisolAPP', ['ngResource'], function ($routeProvider, $locationProvider) {
 
     $routeProvider.when('/', {
         templateUrl: 'partials/home.html',
@@ -8,6 +18,16 @@ angular.module('FlisolAPP', [], function ($routeProvider, $locationProvider) {
     $routeProvider.when('/home/', {
         templateUrl: 'partials/home.html',
         controller: main
+    });
+
+    $routeProvider.when('/palestras/', {
+        templateUrl: 'partials/palestras.html',
+        controller: ListaPalestras
+    });
+
+    $routeProvider.when('/palestras/:ano/:id/:titulo', {
+        templateUrl: 'partials/palestra.html',
+        controller: DetalhePalestra
     });
 
     $routeProvider.when('/sobre/', {
@@ -40,23 +60,32 @@ angular.module('FlisolAPP', [], function ($routeProvider, $locationProvider) {
         controller: AboutCrtl
     });
 
-    $routeProvider.when('/palestras/', {
-        templateUrl: 'partials/users.html',
-        controller: PresentationsCrtl
-    });
+    //$routeProvider.when('/palestras/', {
+    //    templateUrl: 'partials/users.html',
+    //    controller: PresentationsCrtl
+    //});
 
-    $routeProvider.when('/palestrantes/:id', {
-        templateUrl: 'partials/users.html',
-        controller: SpeechersCrtl
-    });
+$routeProvider.when('/palestrantes/:id', {
+    templateUrl: 'partials/users.html',
+    controller: SpeechersCrtl
+});
 
-    $routeProvider.when('/contato/', {
-        templateUrl: 'partials/contact.html',
-        controller: ContactCrtl
-    });
+$routeProvider.when('/contato/', {
+    templateUrl: 'partials/contact.html',
+    controller: ContactCrtl
+});
 
-    $locationProvider.hashPrefix('!');
+$locationProvider.hashPrefix('!');
 
+}).factory("ApiFlisol", function($resource) {
+    return $resource("http://api.flisolcampinas.net/:type/:action/:id/:extra/",
+        { action : "@action", type : "@type" },
+        { 
+            get : { 
+                method : "GET"
+            }
+        }
+    );
 });
 
 // Controllers
@@ -146,8 +175,35 @@ function ContactCrtl($scope, $routeParams, $rootScope) {
 
 }
 
-function PresentationsCrtl($scope, $routeParams, $rootScope) {
+function ListaPalestras($scope, $resource, $rootScope) {
+    $scope.areaTitle = "Palestras Aprovadas | Flisol Campinas 2013";
+    $rootScope.pageTitle = "Flisol Campinas | Palestras";
+    $scope.breadCrumb = ["Flisol Campinas" , "2013", "Palestras"];
 
+    $scope.palestras = [];
+    $scope.api = $resource("http://api.flisolcampinas.net/:type/:action/",
+        { action : 'find'},
+        { 
+            get : { 
+                method : "GET"
+            }
+        }
+    );
+
+    $scope.api.get({type : "palestras", action : "find"}, function(data) {
+        $scope.palestras = data.content.content;
+    });
+    
+}
+
+function DetalhePalestra($scope, $routeParams, $rootScope, $resource, ApiFlisol) {
+    $scope.areaTitle = "Flisol Campinas 2013";
+    $rootScope.pageTitle = "Flisol Campinas | Palestras";
+
+    $scope.palestra = ApiFlisol.get({ type : "palestras" , action : "get" , id : $routeParams.id }, function(data) {
+        $rootScope.pageTitle = $scope.palestra.content.content.titulo + "| Palestras";
+        $scope.breadCrumb = ["Flisol Campinas", $routeParams.ano, "Palestras" , data.content.content.titulo];
+    });
 }
 
 function SpeechersCrtl($scope, $routeParams, $rootScope) {
