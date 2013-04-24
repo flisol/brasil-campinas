@@ -893,7 +893,7 @@ $(".tweet").tweet({
 	username: "flisolcampinas",
 	join_text: "auto",
 	avatar_size: 47,
-	count: 2,
+	count: 3,
 	auto_join_text_default: "we said,", 
 	auto_join_text_ed: "we",
 	auto_join_text_ing: "we were",
