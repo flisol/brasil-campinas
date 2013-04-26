@@ -1,0 +1,87 @@
+<!-- BreadCrumb, Slider, Page, Etc... -->
+<div ng-include src="'partials/sliderTemplate.html'" id="slider_wrapper">
+
+</div>
+<!-- /BreadCrumb, Slider, Page, Etc... -->
+
+<!-- Start of wrapper -->
+<div id="wrapper">
+
+<!-- Start of left content wrapper -->
+    <div class="left_content_wrapper">
+    
+      <!-- Start of post -->
+        <div class="post">
+                
+          <!-- Start of post image
+            <div class="post_image">
+            
+            <a href="#"><img src="img/blog_image.jpg" alt="blog image" /></a>
+            
+            </div><!-- End of post image -->
+            
+            <!-- Start of post details date wrapper -->
+            <div class="post_details_date_wrapper">
+            
+              <!-- Start of post date -->
+                <div class="post_date">
+                <strong ng-bind="palestra.content.content.titulo">Posted:</strong>
+                <!-- <a href="#">03 Feb 2011</a> -->
+                
+                </div><!-- End of post_date -->
+
+                <!-- Start of post author -->
+                <div class="post_author">
+                <strong>Palestrante:</strong>
+                <a href="#!/users/{{palestra.content.content.Palestrante[0].uuid}}">{{palestra.content.content.Palestrante[0].nome}} {{palestra.content.content.Palestrante[0].sobrenome}}</a>
+                   
+                </div><!-- End of post author -->
+                                
+                <!-- Start of post tags
+                <div class="post_tags">
+                <strong>Tags:</strong>
+                <a href="#">Design,</a> <a href="#">Responsive,</a> <a href="#">Orange,</a> <a href="#">Clean,</a> <a href="#">Hipster</a>
+                   
+                </div><!-- End of post tags -->
+
+                <!-- Start of post cats
+                <div class="post_cats">
+                <strong>Category:</strong>
+                <a href="#">Uncategorized,</a> <a href="#">Business,</a> <a href="#">Technology,</a> <a href="#">Design</a>
+                   
+                </div><!-- End of post cats -->
+                
+           </div><!-- End of post details date wrapper -->
+           
+           <!-- Start of other post details wrapper -->
+           <div class="other_post_details_wrapper">
+
+                <!-- Start of post content -->
+                <div class="post_content">
+                
+                    <!-- Start of intro -->
+                    <div ng-bind="palestra.content.content.titulo" class="intro">Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis.
+                    
+                    </div><!-- End of intro -->
+                
+                <p ng-bind-html-unsafe='palestra.content.content.descricao.replaceAll("\n","<br/>")'>Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Aliquam aliquet, est a ullamcorper condimentum, tellus nulla fringilla elit, a iaculis nulla turpis sed wisi. Fusce volutpat. Etiam sodales ante id nunc. Proin ornare dignissim lacus. Nunc porttitor nunc a sem. Sed sollicitudin velit eu magna. Aliquam erat volutpat. Vivamus ornare est non wisi. Proin vel quam. Vivamus egestas. Nunc tempor diam vehicula mauris. Nullam sapien eros, facilisis vel, eleifend non, auctor dapibus, pede.</p>
+                
+                <blockquote ng-bind="palestra.content.content.resumo">Praesent bibendum lobortis lectus, quis dictum risus faucibus sagittis. Mauris a placerat lacus. Mauris rhoncus dolor sit amet nisl volutpat at consequat tortor feugiat. Ut ornare dui eu ipsum lobortis rhoncus.</blockquote>
+                
+                
+                </div><!-- End of post content -->          
+            
+            </div><!-- End of other post details wrapper -->
+
+        </div><!-- End of post -->
+  
+    </div><!-- End of left content wrapper -->
+
+  <!-- Start of right content wrapper -->
+  <div ng-include src="'partials/rightSideInclude.html'" class="right_content_wrapper">
+
+
+  </div><!-- End of right content wrapper -->
+
+</div><!-- End of wrapper -->
+</html>

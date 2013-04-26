@@ -149,6 +149,12 @@ img { -ms-interpolation-mode: bicubic; }
 	font-weight: normal;
 	}
 
+	.itemPalestra {
+		position: relative;
+		float: left;
+		margin-left: 2em !important;
+	}
+
 .one_half { 
 	width: 48%; 
 	}
