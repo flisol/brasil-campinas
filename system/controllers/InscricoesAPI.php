@@ -90,6 +90,7 @@ class InscricoesAPI extends BaseAPI {
 
     if($user->find() == 1) {
       $httpStatus = 200;
+      $user->fetch();
       $user->rg = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
       $user->email = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
       $response['content'] = $user->toArray();
