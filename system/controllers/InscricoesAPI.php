@@ -83,7 +83,7 @@ class InscricoesAPI extends BaseAPI {
     $user = new Inscricoes();
 
     if(is_numeric($id)) {
-      $user->where('idUser','=',$id);
+      $user->where('idInscricao','=',$id);
     } else {
       $user->where('uuid','=',$id);
     }
