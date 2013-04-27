@@ -82,7 +82,13 @@ class InscricoesAPI extends BaseAPI {
 
     $user = new Inscricoes();
 
-    if($user->where('uuid','=',$id)->find() == 1) {
+    if(is_numeric($id)) {
+      $user->where('idUser','=',$id);
+    } else {
+      $user->where('uuid','=',$id);
+    }
+
+    if($user->find() == 1) {
       $httpStatus = 200;
       $user->rg = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
       $user->email = PhpBURN_Views::lazyTranslate("([!ESTE DADO NAO É EXIBIDO POR QUESTOES DE PRIVACIDADE!])");
